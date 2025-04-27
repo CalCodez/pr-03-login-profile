@@ -1,0 +1,157 @@
+.main-container {
+	width: 500px;
+	height: 800px;
+	border: 2px outset red;
+	border-radius: 8px;
+	flex-direction: column;
+	justify-content: space-evenly;
+	position: relative;
+}
+
+.user-name-container,
+.password-container,
+.social-container {
+	flex-direction: column;
+	width: 90%;
+	height: 80px;
+	justify-content: center;
+	align-content: center;
+	row-gap: 10px;
+}
+
+.login-btn-container {
+	height: 80px;
+	width: 100%;
+}
+
+input {
+	width: 95%;
+	height: 60%;
+	border-radius: 8px;
+	background-color: var(--black);
+	border: 2px solid red;
+	padding-left: 10px;
+	background: var(--black);
+	color: red;
+}
+
+input::placeholder {
+	color: red;
+}
+
+label {
+	color: red;
+	align-self: flex-start;
+	margin-left: 10px;
+	font-size: 1.2em;
+}
+
+button {
+	width: 200px;
+	height: 40px;
+	background-color: var(--black);
+	color: red;
+	border-radius: 20px;
+	font-size: 1.5rem;
+	font-weight: 600;
+	box-shadow: 1px 1px 5px 1px red;
+	cursor: pointer;
+}
+
+.social-wrapper {
+	flex-direction: row;
+	justify-content: space-evenly;
+	width: 100%;
+	height: 60%;
+}
+
+span {
+	display: flex;
+	place-content: center;
+	place-items: center;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
+
+i {
+	color: red;
+	font-size: 2em;
+	cursor: pointer;
+}
+
+button:hover,
+i:hover {
+	transform: scale(1.2);
+}
+
+.toast-container {
+	height: 280px;
+	width: 280px;
+	flex-direction: column;
+	border: 2px outset red;
+	position: absolute;
+	background-color: var(--black);
+	color: red;
+	display: none;
+}
+
+.toast-msg-container {
+	width: 90%;
+	height: 200px;
+	font-size: 2rem;
+	text-align: center;
+}
+
+.toast-btn-container {
+	height: 80px;
+	width: 100%;
+}
+
+.toast-btn-container button {
+	display: block;
+	width: 120px;
+	font-size: 1em;
+	place-content: center;
+	place-items: center;
+	border-radius: 15px;
+}
+
+.error-container {
+	height: 200px;
+	width: 280px;
+	flex-direction: column;
+	border: 2px outset red;
+	position: absolute;
+	background-color: var(--black);
+	top: 0;
+	display: none;
+	text-align: center;
+}
+
+.error-msg-container {
+	width: 100%;
+	height: 200px;
+	color: red;
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+.error-btn-container {
+	width: 100%;
+	height: 80px;
+	bottom: 0;
+}
+.error-container button {
+	font-size: 1rem;
+	bottom: 10px;
+}
+
+.flex-active {
+	display: flex;
+}
+
+.flex-inactive {
+	display: none;
+}

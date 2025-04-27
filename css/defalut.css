@@ -24,3 +24,35 @@ a {
 	justify-content: center;
 	align-items: center;
 }
+
+html,
+body {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	background: var(--black);
+	flex-direction: column;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+	padding: 8px;
+}
+
+body {
+	width: 100%;
+	max-width: 1440px;
+	height: 100%;
+	align-self: center;
+	place-items: center;
+}
+
+h1 {
+	text-shadow: 3px 3px 3px red;
+	font-size: 4rem;
+}
+
+h3 {
+	color: red;
+}
