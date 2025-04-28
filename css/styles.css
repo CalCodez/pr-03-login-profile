@@ -1,4 +1,5 @@
-.main-container {
+.main-container,
+.register-container {
 	width: 500px;
 	height: 800px;
 	border: 2px outset red;
@@ -8,20 +9,25 @@
 	position: relative;
 }
 
+.register-container {
+	display: none;
+}
+
 .user-name-container,
 .password-container,
-.social-container {
+.social-container,
+.login-btn-container {
 	flex-direction: column;
 	width: 90%;
 	height: 80px;
 	justify-content: center;
 	align-content: center;
 	row-gap: 10px;
+	/*outline: var(--ol);*/
 }
 
-.login-btn-container {
-	height: 80px;
-	width: 100%;
+.create-password-container {
+	height: 160px;
 }
 
 input {
@@ -56,6 +62,12 @@ button {
 	font-weight: 600;
 	box-shadow: 1px 1px 5px 1px red;
 	cursor: pointer;
+}
+
+.register-btn {
+	font-size: 1.2em;
+	height: 45px;
+	padding: 2px;
 }
 
 .social-wrapper {

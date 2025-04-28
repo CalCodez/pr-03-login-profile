@@ -17,9 +17,9 @@
 		<title>On The Fly Project</title>
 	</head>
 	<body>
-		<div class="main-container container">
+		<div id="main-container" class="main-container container">
 			<div class="header-container container">
-				<h1>Calvin Colbert</h1>
+				<h2>Log In</h2>
 			</div>
 			<div class="user-name-container container">
 				<input id="user-name" type="text" name="username" placeholder="Enter Your Username" />
@@ -32,6 +32,7 @@
 
 			<div class="login-btn-container container">
 				<button id="login-btn">Login</button>
+				<h5 id="register-link">Register An Account ?</h5>
 			</div>
 
 			<div class="social-container container">
@@ -44,20 +45,53 @@
 
 				<h3>Login With Account</h3>
 			</div>
+		</div>
 
-			<div class="toast-container container">
-				<div class="toast-msg-container container">LOGIN SUCCESS!!!!</div>
-				<div class="toast-btn-container container">
-					<button id="close-toast-btn">Close</button>
-				</div>
+		<div id="register-container" class="register-container container">
+			<div class="header-container container">
+				<h2>Register</h2>
 			</div>
 
-			<div class="error-container container">
-				<div class="error-msg-container container"></div>
+			<div class="user-name-container container">
+				<input id="reg-username" type="text" name="reg-username" />
+				<label for="reg-username">Username</label>
+			</div>
+			<div class="password-container create-password-container container">
+				<input id="new-password" type="password" name="new-password" />
+				<label for="new-password">Create A Password</label>
+				<input id="validate-password" type="password" name="validate-password" />
+				<label for="validate-password">Re-enter Password</label>
+			</div>
 
-				<div class="error-btn-container container">
-					<button id="error-exit">Close</button>
+			<div class="login-btn-container container">
+				<button class="register-btn">Register Account</button>
+				<h5 id="existing-acc-link">Already Have An Account?</h5>
+			</div>
+
+			<div class="social-container container">
+				<div class="social-wrapper container">
+					<span><i class="fa-brands fa-facebook"></i></span>
+					<span><i class="fa-brands fa-instagram"></i></span>
+					<span><i class="fa-brands fa-snapchat"></i></span>
+					<span><i class="fa-brands fa-google"></i></span>
 				</div>
+
+				<h3>Register With Account</h3>
+			</div>
+		</div>
+
+		<div class="toast-container container">
+			<div class="toast-msg-container container">LOGIN SUCCESS!!!!</div>
+			<div class="toast-btn-container container">
+				<button id="close-toast-btn">Close</button>
+			</div>
+		</div>
+
+		<div class="error-container container">
+			<div class="error-msg-container container"></div>
+
+			<div class="error-btn-container container">
+				<button id="error-exit">Close</button>
 			</div>
 		</div>
 

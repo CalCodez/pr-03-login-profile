@@ -14,6 +14,25 @@ const keyup = 'keyup';
 const flexActive = 'flex-active';
 const flexInactive = 'flex-inactive';
 
+const registerLink = getById('register-link');
+const existingAccountLink = getById('existing-acc-link');
+const registerContainer = getById('register-container');
+const mainContainer = getById('main-container');
+
+registerLink.addEventListener(click, () => {
+	if (!registerContainer.classList.contains(flexActive)) {
+		toggleClass(mainContainer, flexInactive);
+		toggleClass(registerContainer, flexActive);
+	}
+});
+
+existingAccountLink.addEventListener(click, () => {
+	if (mainContainer.classList.contains(flexInactive)) {
+		toggleClass(registerContainer, flexActive);
+		toggleClass(mainContainer, flexInactive);
+	}
+});
+
 const userName = getById('user-name');
 const password = getById('password');
 const logInBtn = getById('login-btn');
@@ -36,16 +55,45 @@ logInBtn.addEventListener(click, () => {
 		toggleClass(errorContainer, flexActive);
 		textContent(errorMsgContainer, 'ENTER USERNAME AND PASSWORD.. DUH!!!');
 	}
+});
 
-	closeToastBtn.addEventListener(click, () => {
-		if (toastContainer.classList.contains(flexActive)) {
-			toggleClass(toastContainer, flexActive);
-		}
-	});
+const registerUsername = getById('reg-username');
+const newPassword = getById('new-password');
+const validatePassword = getById('validate-password');
+const registerBtn = select('.register-btn');
+const successContainer = select('.toast-msg-container');
 
-	errorExit.addEventListener(click, () => {
-		if (errorContainer.classList.contains(flexActive)) {
-			toggleClass(errorContainer, flexActive);
-		}
-	});
+registerBtn.addEventListener(click, () => {
+	if (
+		!registerUsername.value == '' &&
+		!newPassword.value == '' &&
+		!validatePassword.value == '' &&
+		newPassword.value === validatePassword.value
+	) {
+		toggleClass(toastContainer, flexActive);
+		textContent(successContainer, 'Account Registered!');
+		toggleClass(registerContainer, flexActive);
+		toggleClass(mainContainer, flexInactive);
+	} else if (
+		!registerUsername.value == '' &&
+		!newPassword.value == '' &&
+		!validatePassword.value == '' &&
+		newPassword.value !== validatePassword.value
+	) {
+		toggleClass(errorContainer, flexActive);
+		textContent(errorMsgContainer, 'PASSWORDS MUST MATCH!');
+	}
+});
+
+closeToastBtn.addEventListener(click, () => {
+	if (toastContainer.classList.contains(flexActive)) {
+		toggleClass(toastContainer, flexActive);
+		textContent(successContainer, 'LOGIN SUCCESS!!!!');
+	}
+});
+
+errorExit.addEventListener(click, () => {
+	if (errorContainer.classList.contains(flexActive)) {
+		toggleClass(errorContainer, flexActive);
+	}
 });

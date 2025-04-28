@@ -11,6 +11,7 @@
 	margin: 0;
 	list-style: none;
 	text-decoration: none;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
@@ -31,7 +32,6 @@ body {
 	justify-content: center;
 	align-content: center;
 	background: var(--black);
-	flex-direction: column;
 }
 
 html {
@@ -48,11 +48,24 @@ body {
 	place-items: center;
 }
 
-h1 {
+h2 {
 	text-shadow: 3px 3px 3px red;
 	font-size: 4rem;
 }
 
 h3 {
 	color: red;
+}
+
+h5 {
+	color: gray;
+	font-size: 1.2rem;
+	cursor: pointer;
+	width: 100%;
+	text-align: center;
+}
+
+h5:hover {
+	color: red;
+	transform: scale(1.1);
 }
