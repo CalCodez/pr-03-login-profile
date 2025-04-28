@@ -85,6 +85,24 @@ registerBtn.addEventListener(click, () => {
 	}
 });
 
+const viewMainPAssword = getById('view-main-password');
+const viewNewPassword = getById('view-new-password');
+const viewValidatedPassword = getById('view-validate-password');
+
+const viewPassword = (toggle, input) => {
+	toggle.addEventListener(click, () => {
+		if (!input.value == '' && input.type == 'password') {
+			input.type = 'text';
+		} else {
+			input.type = 'password';
+		}
+	});
+};
+
+viewPassword(viewMainPAssword, password);
+viewPassword(viewNewPassword, newPassword);
+viewPassword(viewValidatedPassword, validatePassword);
+
 closeToastBtn.addEventListener(click, () => {
 	if (toastContainer.classList.contains(flexActive)) {
 		toggleClass(toastContainer, flexActive);

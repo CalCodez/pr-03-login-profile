@@ -23,11 +23,35 @@
 	justify-content: center;
 	align-content: center;
 	row-gap: 10px;
-	/*outline: var(--ol);*/
+}
+
+.password-container {
+	position: relative;
+}
+
+.password-container i {
+	font-size: 1.2rem;
+	position: absolute;
+	top: 15%;
+	right: 5%;
 }
 
 .create-password-container {
 	height: 160px;
+	position: relative;
+}
+
+.create-password-container i {
+	font-size: 1.2rem;
+	position: absolute;
+}
+
+#view-new-password {
+	top: 8%;
+}
+
+#view-validate-password {
+	top: 60%;
 }
 
 input {
@@ -39,6 +63,7 @@ input {
 	padding-left: 10px;
 	background: var(--black);
 	color: red;
+	position: relative;
 }
 
 input::placeholder {
@@ -131,13 +156,12 @@ i:hover {
 }
 
 .error-container {
-	height: 200px;
+	height: 280px;
 	width: 280px;
 	flex-direction: column;
 	border: 2px outset red;
 	position: absolute;
 	background-color: var(--black);
-	top: 0;
 	display: none;
 	text-align: center;
 }
