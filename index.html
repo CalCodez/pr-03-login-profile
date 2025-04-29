@@ -22,7 +22,7 @@
 				<h2>Log In</h2>
 			</div>
 			<div class="user-name-container container">
-				<input id="user-name" type="text" name="username" placeholder="Enter Your Username" />
+				<input id="user-name" type="text" name="username" placeholder="Enter Username or Email" />
 				<label for="username"> Username</label>
 			</div>
 			<div class="password-container container">
@@ -55,15 +55,23 @@
 			</div>
 
 			<div class="user-name-container container">
-				<input id="reg-username" type="text" name="reg-username" />
+				<input id="reg-username" type="text" name="reg-username" placeholder="Create a Username" />
 				<label for="reg-username">Username</label>
 			</div>
 			<div class="password-container create-password-container container">
-				<input id="new-password" type="password" name="new-password" />
+				<input
+					id="new-password"
+					type="password"
+					name="new-password"
+					placeholder="Create A Password" />
 				<i id="view-new-password" class="fa-solid fa-eye"></i>
 
 				<label for="new-password">Create A Password</label>
-				<input id="validate-password" type="password" name="validate-password" />
+				<input
+					id="validate-password"
+					type="password"
+					name="validate-password"
+					placeholder="Re-enter Password" />
 				<i id="view-validate-password" class="fa-solid fa-eye"></i>
 
 				<label for="validate-password">Re-enter Password</label>
@@ -87,17 +95,9 @@
 		</div>
 
 		<div class="toast-container container">
-			<div class="toast-msg-container container">LOGIN SUCCESS!!!!</div>
+			<div class="toast-msg-container container">PASSWORDS DO NOT MATCH!</div>
 			<div class="toast-btn-container container">
 				<button id="close-toast-btn">Close</button>
-			</div>
-		</div>
-
-		<div class="error-container container">
-			<div class="error-msg-container container"></div>
-
-			<div class="error-btn-container container">
-				<button id="error-exit">Close</button>
 			</div>
 		</div>
 
