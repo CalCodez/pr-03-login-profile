@@ -5,6 +5,7 @@
 	--olB: 1px solid blue;
 	--olY: 1px solid yellow;
 	--olR: 1px solid red;
+	--night: #0c090a;
 }
 * {
 	padding: 0;
@@ -31,7 +32,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-content: center;
-	background: var(--black);
+	background: var(--night);
 }
 
 html {

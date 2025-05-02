@@ -2,7 +2,7 @@
 .register-container {
 	width: 500px;
 	height: 800px;
-	border: 5px solid var(--black);
+	border: 5px solid var(--night);
 	box-shadow: 1px 1px 3px 3px red;
 	border-radius: 8px;
 	flex-direction: column;
@@ -60,10 +60,10 @@ input {
 	width: 95%;
 	height: 60%;
 	border-radius: 8px;
-	background-color: var(--black);
+	background-color: var(--night);
 	border: 2px solid red;
 	padding-left: 10px;
-	background: var(--black);
+	background: var(--night);
 	color: red;
 	position: relative;
 }
@@ -94,7 +94,7 @@ label {
 button {
 	width: 200px;
 	height: 40px;
-	background-color: var(--black);
+	background-color: var(--night);
 	color: red;
 	border-radius: 20px;
 	font-size: 1.5rem;
@@ -143,7 +143,7 @@ i:hover {
 	flex-direction: column;
 	border: 2px outset red;
 	position: absolute;
-	background-color: var(--black);
+	background-color: var(--night);
 	color: red;
 	display: none;
 	place-content: center;
