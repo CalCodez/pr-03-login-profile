@@ -5,7 +5,14 @@
 	--olB: 1px solid blue;
 	--olY: 1px solid yellow;
 	--olR: 1px solid red;
+<<<<<<< HEAD
 	--night: #0c090a;
+=======
+
+	--project-color-main: #0c090a;
+	--project-color-secondary: #c0c0c0;
+	--font-color-dark: #454545;
+>>>>>>> main
 }
 * {
 	padding: 0;
@@ -32,7 +39,11 @@ body {
 	display: flex;
 	justify-content: center;
 	align-content: center;
+<<<<<<< HEAD
 	background: var(--night);
+=======
+	background: var(--project-color-main);
+>>>>>>> main
 }
 
 html {
@@ -50,16 +61,17 @@ body {
 }
 
 h2 {
-	text-shadow: 1px 1px 5px red;
+	text-shadow: 1px 1px 5px var(--project-color-secondary);
 	font-size: 4rem;
+	color: var(--project-color-main);
 }
 
 h3 {
-	color: red;
+	color: var(--project-color-secondary);
 }
 
 h5 {
-	color: gray;
+	color: var(--project-color-secondary);
 	font-size: 1.2rem;
 	cursor: pointer;
 	width: 100%;
@@ -67,6 +79,6 @@ h5 {
 }
 
 h5:hover {
-	color: red;
+	color: var(--project-color-secondary);
 	transform: scale(1.1);
 }
