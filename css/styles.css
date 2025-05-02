@@ -41,8 +41,6 @@
 .create-password-container {
 	height: 160px;
 	position: relative;
-
-	outline: var(--olR);
 }
 
 .create-password-container i {
