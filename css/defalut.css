@@ -5,14 +5,10 @@
 	--olB: 1px solid blue;
 	--olY: 1px solid yellow;
 	--olR: 1px solid red;
-<<<<<<< HEAD
-	--night: #0c090a;
-=======
 
 	--project-color-main: #0c090a;
 	--project-color-secondary: #c0c0c0;
 	--font-color-dark: #454545;
->>>>>>> main
 }
 * {
 	padding: 0;
@@ -39,11 +35,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-content: center;
-<<<<<<< HEAD
-	background: var(--night);
-=======
 	background: var(--project-color-main);
->>>>>>> main
 }
 
 html {
