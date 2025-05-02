@@ -2,13 +2,18 @@
 .register-container {
 	width: 500px;
 	height: 800px;
-	border: 5px solid var(--black);
-	box-shadow: 1px 1px 3px 3px red;
+	border: 5px solid var(--project-color-main);
+	box-shadow: 1px 1px 3px 3px var(--project-color-secondary);
 	border-radius: 8px;
 	flex-direction: column;
 	justify-content: space-evenly;
 	position: relative;
-	background: conic-gradient(black, gray, black, gray, black, gray);
+	background: linear-gradient(
+		20deg,
+		var(--project-color-main),
+		var(--project-color-secondary),
+		var(--project-color-main)
+	);
 }
 
 .register-container {
@@ -60,16 +65,16 @@ input {
 	width: 95%;
 	height: 60%;
 	border-radius: 8px;
-	background-color: var(--black);
-	border: 2px solid red;
+	background-color: var(--project-color-main);
+	border: 2px solid var(--project-color-secondary);
 	padding-left: 10px;
-	background: var(--black);
-	color: red;
+	background: var(--project-color-main);
+	color: var(--project-color-secondary);
 	position: relative;
 }
 
 input::placeholder {
-	color: red;
+	color: var(--project-color-secondary);
 	font-size: 1rem;
 	width: fit-content;
 	font-weight: 600;
@@ -79,27 +84,24 @@ input::placeholder {
 	font-weight: 400;
 }
 
-input:focus {
-	background-color: black;
-	border-color: red;
-}
-
 label {
-	color: red;
+	color: var(--font-color-dark);
 	align-self: flex-start;
 	margin-left: 10px;
 	font-size: 1.2em;
+	text-transform: uppercase;
+	font-weight: 600;
 }
 
 button {
 	width: 200px;
 	height: 40px;
-	background-color: var(--black);
-	color: red;
+	background-color: var(--project-color-main);
+	color: var(--project-color-secondary);
 	border-radius: 20px;
 	font-size: 1.5rem;
 	font-weight: 600;
-	box-shadow: 1px 1px 5px 1px red;
+	box-shadow: 1px 1px 5px 1px var(--project-color-secondary);
 	cursor: pointer;
 }
 
@@ -127,7 +129,7 @@ span {
 }
 
 i {
-	color: red;
+	color: var(--project-color-secondary);
 	font-size: 2em;
 	cursor: pointer;
 }
@@ -141,10 +143,10 @@ i:hover {
 	height: 280px;
 	width: 280px;
 	flex-direction: column;
-	border: 2px outset red;
+	border: 2px outset var(--project-color-secondary);
 	position: absolute;
-	background-color: var(--black);
-	color: red;
+	background-color: var(--project-color-main);
+	color: var(--project-color-secondary);
 	display: none;
 	place-content: center;
 	place-items: center;
