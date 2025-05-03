@@ -16,9 +16,9 @@
 	);
 }
 
-/*.main-container {
+.main-container {
 	display: none;
-}*/
+}
 
 .register-container {
 	display: none;
@@ -179,7 +179,7 @@ i:hover {
 /* Accessed Profile Containers */
 
 .profile-container {
-	display: none;
+	/*display: none;*/
 	flex-direction: column;
 	justify-content: flex-start;
 	row-gap: 50px;
@@ -202,6 +202,19 @@ i:hover {
 
 .profile-body-container {
 	height: 400px;
+	justify-content: flex-start;
+	padding: 0 10px;
+}
+.profile-img-container {
+	width: 320px;
+	height: 100%;
+	outline: var(--olB);
+}
+
+.profile-stats-container {
+	height: 100%;
+	width: 320px;
+	outline: var(--olR);
 }
 
 .profile-footer-container {
