@@ -16,9 +16,9 @@
 	);
 }
 
-.main-container {
+/*.main-container {
 	display: none;
-}
+}*/
 
 .register-container {
 	display: none;
@@ -179,11 +179,10 @@ i:hover {
 /* Accessed Profile Containers */
 
 .profile-container {
-	/*display: none;*/
+	display: none;
 	flex-direction: column;
 	justify-content: flex-start;
 	row-gap: 50px;
-
 	width: 100%;
 	height: fit-content;
 	background: linear-gradient(20deg, var(--project-color-secondary), var(--project-color-main));
@@ -191,7 +190,6 @@ i:hover {
 
 .profile-container > div {
 	width: 100%;
-	outline: var(--ol);
 }
 
 .profile-header-container {
@@ -206,14 +204,15 @@ i:hover {
 	padding: 0 10px;
 	column-gap: 80px;
 	flex-wrap: wrap;
-	background-color: var(--font-color-dark);
+	background: linear-gradient(90deg, var(--project-color-secondary), var(--project-color-main));
 }
 .profile-img-container {
 	width: 320px;
 	height: 320px;
 	border-radius: 50%;
 	overflow: hidden;
-	border: 2px solid var(--project-color-secondary);
+	border: 2px solid var(--project-color-main);
+	box-shadow: 1px 1px 5px 1px var(--project-color-main);
 }
 
 .profile-img-container img {
@@ -259,14 +258,15 @@ i:hover {
 .profile-content-container h3 {
 	font-size: 2rem;
 	text-align: center;
+	margin: 10px 0;
+	font-size: 2.5rem;
 }
 
 .content-wrapper {
 	height: fit-content;
 	text-align: center;
-	outline: var(--olR);
 	justify-self: center;
-	width: fit-content;
+	width: 95%;
 }
 
 .content-wrapper p {
