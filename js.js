@@ -37,6 +37,7 @@ existingAccountLink.addEventListener(click, () => {
 //Profiles
 
 const donatello = {
+	id: 'donnie03',
 	name: 'Donatello',
 	nickName: 'Donnie',
 	userName: 'donnie03',
@@ -55,6 +56,7 @@ In essence, Donatello is the heart and mind of the Teenage Mutant Ninja Turtles,
 };
 
 const leonardo = {
+	id: 'leo01',
 	name: 'Leonardo',
 	nickName: 'Leo',
 	userName: 'leo01',
@@ -72,6 +74,7 @@ In addition to his role as a leader and warrior, Leo also has a strong sense of 
 };
 
 const michelangelo = {
+	id: 'mikey04',
 	name: 'Michelangelo',
 	nickName: 'Mikey',
 	userName: 'mikey04',
@@ -90,6 +93,7 @@ In essence, Michelangelo is a complex character who brings a unique blend of hum
 };
 
 const raphael = {
+	id: 'ralph02',
 	name: 'Raphael',
 	nickName: 'Ralph',
 	userName: 'ralph02',
@@ -135,34 +139,41 @@ const toastMessage = select('.toast-msg-container');
 //	}
 //});
 
-const logIn = (toggler, obj) => {
-	toggler.addEventListener(click, () => {
+const logIn = (pro1) => {
+	logInBtn.addEventListener(click, () => {
 		if (
-			userName.value === obj.userName &&
-			password.value === obj.passWord &&
 			!userName.value == '' &&
-			!password.value == ''
+			!password.value == '' &&
+			userName.value == pro1.id &&
+			userName.value === pro1.userName &&
+			password.value === pro1.passWord
 		) {
 			toggleClass(mainContainer, flexInactive);
 			toggleClass(profileContainer, flexActive);
-			textContent(profileTitle, obj.nickName);
-			textContent(name, obj.name);
-			textContent(personality, obj.stats.personality);
-			textContent(weapon, obj.stats.weapon);
-			textContent(role, obj.stats.role);
-			profileImg.src = obj.images.profile;
-			textContent(contentText, obj.contentText);
-		} else if (userName.value !== obj.userName && password.value !== obj.password) {
+			profileImg.src = pro1.images.profile;
+			textContent(profileTitle, pro1.nickName);
+			textContent(name, pro1.name);
+			textContent(personality, pro1.stats.personality);
+			textContent(weapon, pro1.stats.weapon);
+			textContent(role, pro1.stats.role);
+			textContent(contentText, pro1.contentText);
+		} else if (
+			!userName.value == '' &&
+			!password.value == '' &&
+			userName.value == pro1.id &&
+			userName.value == pro1.userName &&
+			password.value !== pro1.passWord
+		) {
 			toggleClass(toastContainer, flexActive);
-			textContent(toastMessage, 'Username/Password Incorrect');
+			textContent(toastMessage, 'Username/Password Incorrect!');
 		}
 	});
 };
 
-logIn(logInBtn, donatello);
-logIn(logInBtn, leonardo);
-logIn(logInBtn, michelangelo);
-logIn(logInBtn, raphael);
+logIn(leonardo);
+logIn(donatello);
+logIn(michelangelo);
+logIn(raphael);
 
 logOffBtn.addEventListener(click, () => {
 	if (profileContainer.classList.contains(flexActive)) {
