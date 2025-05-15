@@ -126,24 +126,24 @@ const logInBtn = getById('login-btn');
 const toastContainer = select('.toast-container');
 const toastMessage = select('.toast-msg-container');
 
-//logInBtn.addEventListener(click, () => {
-//	if (!userName.value == '' && !password.value == '') {
-//		toggleClass(toastContainer, flexActive);
-//		textContent(toastMessage, 'LOGIN SUCCESS!');
-//	} else if (!userName.value == '' && password.value == '') {
-//		toggleClass(toastContainer, flexActive);
-//		textContent(toastMessage, 'PASSWORD REQUIRED!');
-//	} else if (userName.value == '' && !password.value == '') {
-//		toggleClass(toastContainer, flexActive);
-//		textContent(toastMessage, 'USERNAME REQUIRED!');
-//	}
-//});
+const handleBlankInputs = () => {
+	logInBtn.addEventListener(click, () => {
+		if (userName.value == '' && password.value == '') {
+			toggleClass(toastContainer, flexActive);
+			textContent(toastMessage, 'All Felids Required!');
+		} else if (userName.value == '' && !password.value == '') {
+			toggleClass(toastContainer, flexActive);
+			textContent(toastMessage, 'Username Required!');
+		} else if (!userName.value == '' && password.value == '') {
+			toggleClass(toastContainer, flexActive);
+			textContent(toastMessage, 'Password Required!');
+		}
+	});
+};
 
 const logIn = (pro1) => {
 	logInBtn.addEventListener(click, () => {
 		if (
-			!userName.value == '' &&
-			!password.value == '' &&
 			userName.value == pro1.id &&
 			userName.value === pro1.userName &&
 			password.value === pro1.passWord
@@ -158,10 +158,8 @@ const logIn = (pro1) => {
 			textContent(role, pro1.stats.role);
 			textContent(contentText, pro1.contentText);
 		} else if (
-			!userName.value == '' &&
-			!password.value == '' &&
 			userName.value == pro1.id &&
-			userName.value == pro1.userName &&
+			userName.value === pro1.userName &&
 			password.value !== pro1.passWord
 		) {
 			toggleClass(toastContainer, flexActive);
@@ -170,10 +168,35 @@ const logIn = (pro1) => {
 	});
 };
 
+const validateUserName = () => {
+	logInBtn.addEventListener(click, () => {
+		for (let i of arrOfProfiles) {
+			if (!userName.value == '' && userName.value !== i.id && password.value === i.passWord) {
+				toggleClass(toastContainer, flexActive);
+				textContent(toastMessage, 'Username/Password Incorrect!');
+			}
+		}
+	});
+};
+
+//const verifyAccounts = () => {
+//	logInBtn.addEventListener(click, () => {
+//		for (let i of arrOfProfiles) {
+//			if (userName.value !== i.id && password.value !== i.passWord) {
+//				toggleClass(toastContainer, flexActive);
+//				textContent(toastMessage, 'Profile Not Found, Register Account!');
+//				console.log(`Checking These Conditions`);
+//			}
+//		}
+//	});
+//};
+
+handleBlankInputs();
 logIn(leonardo);
 logIn(donatello);
 logIn(michelangelo);
 logIn(raphael);
+validateUserName();
 
 logOffBtn.addEventListener(click, () => {
 	if (profileContainer.classList.contains(flexActive)) {
