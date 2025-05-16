@@ -254,3 +254,5 @@ closeToastBtn.addEventListener(click, () => {
 		toggleClass(toastContainer, flexActive);
 	}
 });
+
+const placeholder = 'delete var';
