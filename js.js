@@ -128,7 +128,7 @@ const toastMessage = select('.toast-msg-container');
 
 const handleBlankInputs = () => {
 	logInBtn.addEventListener(click, () => {
-		if (userName.value == '' && password.value == '') {
+		if (userName.value === '' && password.value == '') {
 			toggleClass(toastContainer, flexActive);
 			textContent(toastMessage, 'All Felids Required!');
 		} else if (userName.value == '' && !password.value == '') {
@@ -141,30 +141,30 @@ const handleBlankInputs = () => {
 	});
 };
 
-const logIn = (pro1) => {
+const logIn = (profile) => {
 	logInBtn.addEventListener(click, () => {
 		if (
-			userName.value == pro1.id &&
-			userName.value === pro1.userName &&
-			password.value === pro1.passWord
+			userName.value === profile.id &&
+			userName.value === profile.userName &&
+			password.value === profile.passWord
 		) {
 			toggleClass(mainContainer, flexInactive);
 			toggleClass(profileContainer, flexActive);
-			profileImg.src = pro1.images.profile;
-			textContent(profileTitle, pro1.nickName);
-			textContent(name, pro1.name);
-			textContent(personality, pro1.stats.personality);
-			textContent(weapon, pro1.stats.weapon);
-			textContent(role, pro1.stats.role);
-			textContent(contentText, pro1.contentText);
+			profileImg.src = profile.images.profile;
+			textContent(profileTitle, profile.nickName);
+			textContent(name, profile.name);
+			textContent(personality, profile.stats.personality);
+			textContent(weapon, profile.stats.weapon);
+			textContent(role, profile.stats.role);
+			textContent(contentText, profile.contentText);
 		} else if (
-			userName.value == pro1.id &&
-			userName.value === pro1.userName &&
-			password.value !== pro1.passWord
+			userName.value == profile.id &&
+			userName.value === profile.userName &&
+			password.value !== profile.passWord
 		) {
 			toggleClass(toastContainer, flexActive);
 			textContent(toastMessage, 'Password Incorrect!');
-		} else if (userName.value !== pro1.id && password.value == pro1.passWord) {
+		} else if (userName.value !== profile.id && password.value == profile.passWord) {
 			toggleClass(toastContainer, flexActive);
 			textContent(toastMessage, 'Username Incorrect');
 		}
@@ -172,7 +172,6 @@ const logIn = (pro1) => {
 };
 
 handleBlankInputs();
-
 logIn(leonardo);
 logIn(donatello);
 logIn(michelangelo);
