@@ -163,40 +163,20 @@ const logIn = (pro1) => {
 			password.value !== pro1.passWord
 		) {
 			toggleClass(toastContainer, flexActive);
-			textContent(toastMessage, 'Username/Password Incorrect!');
+			textContent(toastMessage, 'Password Incorrect!');
+		} else if (userName.value !== pro1.id && password.value == pro1.passWord) {
+			toggleClass(toastContainer, flexActive);
+			textContent(toastMessage, 'Username Incorrect');
 		}
 	});
 };
-
-const validateUserName = () => {
-	logInBtn.addEventListener(click, () => {
-		for (let i of arrOfProfiles) {
-			if (!userName.value == '' && userName.value !== i.id && password.value === i.passWord) {
-				toggleClass(toastContainer, flexActive);
-				textContent(toastMessage, 'Username/Password Incorrect!');
-			}
-		}
-	});
-};
-
-//const verifyAccounts = () => {
-//	logInBtn.addEventListener(click, () => {
-//		for (let i of arrOfProfiles) {
-//			if (userName.value !== i.id && password.value !== i.passWord) {
-//				toggleClass(toastContainer, flexActive);
-//				textContent(toastMessage, 'Profile Not Found, Register Account!');
-//				console.log(`Checking These Conditions`);
-//			}
-//		}
-//	});
-//};
 
 handleBlankInputs();
+
 logIn(leonardo);
 logIn(donatello);
 logIn(michelangelo);
 logIn(raphael);
-validateUserName();
 
 logOffBtn.addEventListener(click, () => {
 	if (profileContainer.classList.contains(flexActive)) {
@@ -209,6 +189,26 @@ const registerUsername = getById('reg-username');
 const newPassword = getById('new-password');
 const validatePassword = getById('validate-password');
 const registerBtn = select('.register-btn');
+
+const handleRegisterInputs = () => {
+	const regInputs = [registerUsername, newPassword, validatePassword];
+
+	registerBtn.addEventListener(click, () => {
+		for (let inputs of regInputs) {
+			if (inputs.value == '') {
+				toggleClass(toastContainer, flexActive);
+				textContent(toastMessage, 'All Fields Required!');
+			}
+		}
+
+		if (!registerUsername.value == '' && newPassword.value == '' && validatePassword.value == '') {
+			toggleClass(toastContainer, flexActive);
+			textContent(toastMessage, 'Please Create A Password!');
+		}
+	});
+};
+
+handleRegisterInputs();
 
 registerBtn.addEventListener(click, () => {
 	if (
@@ -228,7 +228,7 @@ registerBtn.addEventListener(click, () => {
 		newPassword.value !== validatePassword.value
 	) {
 		toggleClass(toastContainer, flexActive);
-		textContent(toastMessage, 'PASSWORDS DO NOT MATCH!');
+		textContent(toastMessage, 'Passwords Must Match!');
 	}
 });
 
