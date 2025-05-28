@@ -128,7 +128,7 @@ const toastMessage = select('.toast-msg-container');
 
 const handleBlankInputs = () => {
 	logInBtn.addEventListener(click, () => {
-		if (userName.value === '' && password.value == '') {
+		if (userName.value == '' && password.value == '') {
 			toggleClass(toastContainer, flexActive);
 			textContent(toastMessage, 'All Felids Required!');
 		} else if (userName.value == '' && !password.value == '') {
