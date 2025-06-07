@@ -15,6 +15,30 @@ const keyup = 'keyup';
 const flexActive = 'flex-active';
 const flexInactive = 'flex-inactive';
 
+const projectInfoBtn = getById('project-info-btn');
+const projectInfoContainer = select('.project-info-container');
+const loginInfoBtn = getById('login-info-btn');
+const loginInfoContainer = select('.login-info-container');
+
+const projectInfoAndLogin = (toggle, container1, container2) => {
+	toggle.addEventListener(click, () => {
+		if (!container1.classList.contains(flexActive) && !container2.classList.contains(flexActive)) {
+			toggleClass(container1, flexActive);
+		} else if (
+			container2.classList.contains(flexActive) &&
+			!container1.classList.contains(flexActive)
+		) {
+			toggleClass(container2, flexActive);
+			toggleClass(container1, flexActive);
+		} else {
+			toggleClass(container1, flexActive);
+		}
+	});
+};
+
+projectInfoAndLogin(projectInfoBtn, projectInfoContainer, loginInfoContainer);
+projectInfoAndLogin(loginInfoBtn, loginInfoContainer, projectInfoContainer);
+
 const registerLink = getById('register-link');
 const existingAccountLink = getById('existing-acc-link');
 const registerContainer = getById('register-container');

@@ -75,3 +75,47 @@ h5:hover {
 	color: var(--project-color-secondary);
 	transform: scale(1.1);
 }
+
+button {
+	width: 200px;
+	height: 40px;
+	background-color: var(--project-color-main);
+	color: var(--project-color-secondary);
+	border-radius: 20px;
+	font-size: 1.5rem;
+	font-weight: 600;
+	box-shadow: 1px 1px 5px 1px var(--project-color-secondary);
+	cursor: pointer;
+}
+
+#project-info-btn,
+#login-info-btn {
+	background: linear-gradient(
+		90deg,
+		var(--project-color-main),
+		var(--project-color-main),
+		var(--font-color-dark)
+	);
+	color: var(--project-color-secondary);
+	text-shadow: 2px 2px 2px var(--project-color-main);
+	position: absolute;
+	z-index: 1;
+	top: 10px;
+	font-size: 1em;
+	padding: 0 5px;
+}
+
+#project-info-btn {
+	left: 20px;
+	width: 150px;
+}
+
+#login-info-btn {
+	right: 20px;
+	width: 250px;
+}
+
+#project-info-btn:hover,
+#login-info-btn:hover {
+	transform: scale(1.02);
+}
