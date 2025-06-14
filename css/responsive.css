@@ -28,3 +28,10 @@
 		width: 100%;
 	}
 }
+
+@media (max-width: 321px) {
+	.project-info-container {
+		width: 95%;
+		font-size: 1.15rem;
+	}
+}
