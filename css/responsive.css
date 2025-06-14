@@ -1,0 +1,29 @@
+@media (max-width: 468px) {
+	html {
+		padding: 0;
+	}
+
+	.main-container,
+	.register-container {
+		width: 95%;
+	}
+
+	.profile-container {
+		width: 95%;
+		height: fit-content;
+		margin-top: 580px;
+	}
+
+	.profile-body-container {
+		justify-content: center;
+	}
+
+	.profile-img-container {
+		width: 280px;
+		height: 280px;
+	}
+
+	.profile-stats-container {
+		width: 100%;
+	}
+}

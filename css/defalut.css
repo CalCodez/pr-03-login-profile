@@ -51,6 +51,7 @@ body {
 	height: 100%;
 	align-self: center;
 	place-items: center;
+	place-content: center;
 }
 
 h2 {
