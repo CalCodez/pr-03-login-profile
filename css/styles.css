@@ -269,13 +269,12 @@ i:hover {
 	padding: 0 10px;
 	column-gap: 80px;
 	flex-wrap: wrap;
-	outline: 2px solid orange;
 
 	background: linear-gradient(90deg, var(--project-color-secondary), var(--project-color-main));
 }
 .profile-img-container {
-	width: 320px;
-	height: 320px;
+	width: 300px;
+	height: 300px;
 	border-radius: 50%;
 	overflow: hidden;
 	border: 2px solid var(--project-color-main);
@@ -293,7 +292,6 @@ i:hover {
 	width: 320px;
 	flex-direction: column;
 	justify-content: space-evenly;
-	outline: 1px solid pink;
 }
 
 .profile-stats-container li {
@@ -303,7 +301,6 @@ i:hover {
 	font-size: 1.1rem;
 	color: var(--project-color-secondary);
 	text-shadow: 2px 2px 1px var(--project-color-main);
-	outline: 1px solid yellow;
 }
 
 .profile-stats-container label {

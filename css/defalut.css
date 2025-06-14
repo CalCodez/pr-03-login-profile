@@ -89,7 +89,16 @@ button {
 	cursor: pointer;
 }
 
-#project-info-btn,
+#project-info-btn {
+	color: var(--project-color-main);
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	box-shadow: 1px 1px 8px 2px var(--project-color-secondary);
+	border-radius: 50%;
+	background-color: var(--project-color-secondary);
+}
+
 #login-info-btn {
 	background: linear-gradient(
 		90deg,
@@ -102,18 +111,13 @@ button {
 	position: absolute;
 	z-index: 1;
 	top: 10px;
-	font-size: 1em;
+	font-size: 0.8em;
 	padding: 0 5px;
-}
-
-#project-info-btn {
-	left: 20px;
-	width: 150px;
 }
 
 #login-info-btn {
 	right: 20px;
-	width: 250px;
+	width: 200px;
 }
 
 #project-info-btn:hover,

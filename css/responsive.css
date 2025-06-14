@@ -1,6 +1,7 @@
 @media (max-width: 468px) {
 	html {
 		padding: 0;
+		height: fit-content;
 	}
 
 	.main-container,
@@ -11,7 +12,7 @@
 	.profile-container {
 		width: 95%;
 		height: fit-content;
-		margin-top: 580px;
+		margin-bottom: 30px;
 	}
 
 	.profile-body-container {
