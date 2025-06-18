@@ -188,7 +188,7 @@ const logIn = (profile) => {
 		) {
 			toggleClass(toastContainer, flexActive);
 			textContent(toastMessage, 'Password Incorrect!');
-		} else if (userName.value !== profile.id && password.value == profile.passWord) {
+		} else if (userName.value !== profile.id && password.value === profile.passWord) {
 			toggleClass(toastContainer, flexActive);
 			textContent(toastMessage, 'Username Incorrect');
 		}
