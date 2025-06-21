@@ -150,56 +150,56 @@ const logInBtn = getById('login-btn');
 const toastContainer = select('.toast-container');
 const toastMessage = select('.toast-msg-container');
 
-const handleBlankInputs = () => {
-	logInBtn.addEventListener(click, () => {
-		if (userName.value == '' && password.value == '') {
-			toggleClass(toastContainer, flexActive);
-			textContent(toastMessage, 'All Felids Required!');
-		} else if (userName.value == '' && !password.value == '') {
-			toggleClass(toastContainer, flexActive);
-			textContent(toastMessage, 'Username Required!');
-		} else if (!userName.value == '' && password.value == '') {
-			toggleClass(toastContainer, flexActive);
-			textContent(toastMessage, 'Password Required!');
-		}
-	});
-};
+logInBtn.addEventListener(click, () => {
+	const usernameVal = userName.value.trim();
+	const passwordVal = password.value.trim();
 
-const logIn = (profile) => {
-	logInBtn.addEventListener(click, () => {
-		if (
-			userName.value === profile.id &&
-			userName.value === profile.userName &&
-			password.value === profile.passWord
-		) {
-			toggleClass(mainContainer, flexInactive);
-			toggleClass(profileContainer, flexActive);
-			profileImg.src = profile.images.profile;
-			textContent(profileTitle, profile.nickName);
-			textContent(name, profile.name);
-			textContent(personality, profile.stats.personality);
-			textContent(weapon, profile.stats.weapon);
-			textContent(role, profile.stats.role);
-			textContent(contentText, profile.contentText);
-		} else if (
-			userName.value == profile.id &&
-			userName.value === profile.userName &&
-			password.value !== profile.passWord
-		) {
-			toggleClass(toastContainer, flexActive);
-			textContent(toastMessage, 'Password Incorrect!');
-		} else if (userName.value !== profile.id && password.value === profile.passWord) {
-			toggleClass(toastContainer, flexActive);
-			textContent(toastMessage, 'Username Incorrect');
-		}
-	});
-};
+	// Handle blank fields
+	if (!usernameVal && !passwordVal) {
+		toggleClass(toastContainer, flexActive);
+		textContent(toastMessage, 'All Fields Required!');
+		return;
+	} else if (!usernameVal) {
+		toggleClass(toastContainer, flexActive);
+		textContent(toastMessage, 'Username Required!');
+		return;
+	} else if (!passwordVal) {
+		toggleClass(toastContainer, flexActive);
+		textContent(toastMessage, 'Password Required!');
+		return;
+	}
 
-handleBlankInputs();
-logIn(leonardo);
-logIn(donatello);
-logIn(michelangelo);
-logIn(raphael);
+	// Check against profiles
+	let foundUser = false;
+	for (const profile of arrOfProfiles) {
+		if (usernameVal === profile.userName || usernameVal === profile.id) {
+			foundUser = true;
+			if (passwordVal === profile.passWord) {
+				// Success!
+				toggleClass(mainContainer, flexInactive);
+				toggleClass(profileContainer, flexActive);
+				profileImg.src = profile.images.profile;
+				textContent(profileTitle, profile.nickName);
+				textContent(name, profile.name);
+				textContent(personality, profile.stats.personality);
+				textContent(weapon, profile.stats.weapon);
+				textContent(role, profile.stats.role);
+				textContent(contentText, profile.contentText);
+				return;
+			} else {
+				toggleClass(toastContainer, flexActive);
+				textContent(toastMessage, 'Password Incorrect!');
+				return;
+			}
+		}
+	}
+
+	// No user matched
+	if (!foundUser) {
+		toggleClass(toastContainer, flexActive);
+		textContent(toastMessage, 'User Not Found!');
+	}
+});
 
 logOffBtn.addEventListener(click, () => {
 	if (profileContainer.classList.contains(flexActive)) {
